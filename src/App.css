@@ -1,0 +1,154 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1.5rem 4rem;
+  background: #000000;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: #e0e0e0;
+}
+
+.app__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.app__title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #f472b6, #a78bfa, #818cf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.app__subtitle {
+  font-size: 1.05rem;
+  color: #9ca3af;
+  margin: 0;
+  font-weight: 400;
+}
+
+.app__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 960px;
+  width: 100%;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  padding: 2.25rem 2rem;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.card--liked {
+  border-color: rgba(244, 114, 182, 0.35);
+  box-shadow: 0 4px 28px rgba(244, 114, 182, 0.12),
+              0 0 0 1px rgba(244, 114, 182, 0.08);
+}
+
+.card--liked:hover {
+  box-shadow: 0 12px 44px rgba(244, 114, 182, 0.2),
+              0 0 0 1px rgba(244, 114, 182, 0.12);
+}
+
+.card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f3f4f6;
+  margin: 0;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+.card__status {
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.06);
+  color: #9ca3af;
+  transition: all 0.35s ease;
+  user-select: none;
+}
+
+.card__status--liked {
+  background: rgba(244, 114, 182, 0.12);
+  color: #f472b6;
+}
+
+.card__button {
+  padding: 0.65rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  letter-spacing: 0.01em;
+  background: linear-gradient(135deg, #818cf8, #a78bfa);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(129, 140, 248, 0.3);
+}
+
+.card__button:hover {
+  transform: scale(1.06);
+  box-shadow: 0 4px 20px rgba(129, 140, 248, 0.45);
+}
+
+.card__button:active {
+  transform: scale(0.97);
+}
+
+.card__button--unlike {
+  background: linear-gradient(135deg, #f472b6, #ec4899);
+  box-shadow: 0 2px 12px rgba(244, 114, 182, 0.3);
+}
+
+.card__button--unlike:hover {
+  box-shadow: 0 4px 20px rgba(244, 114, 182, 0.45);
+}
+
+@media (max-width: 640px) {
+  .app {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .app__title {
+    font-size: 2rem;
+  }
+
+  .app__cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
